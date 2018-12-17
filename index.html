@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <script src="https://www.gstatic.com/firebasejs/5.5.0/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/5.5.0/firebase-firestore.js"></script>
+    <link rel="stylesheet" href="style.css">
+    <title>TODO List</title>
+</head>
+<body>
+    <h1>My TODO List</h1>
+
+    <div class="content">
+        <form id="add-to-list">
+            <input placeholder="title of the task" type="text" name="title">
+            <input placeholder="to be completed on" type="date" name="dateToComplete">
+            <button type="submit">Add</button>
+        </form>
+        <ul id="list">
+        </ul>
+    </div>
+    
+
+    <script>
+        // Initialize Firebase
+        var config = {
+            apiKey: "AIzaSyAaZwCgYbJkWVCcriKpB8WTCU7KYGIcoK4",
+            authDomain: "todo-list-514dc.firebaseapp.com",
+            databaseURL: "https://todo-list-514dc.firebaseio.com",
+            projectId: "todo-list-514dc",
+            storageBucket: "todo-list-514dc.appspot.com",
+            messagingSenderId: "912053913603"
+        };
+        firebase.initializeApp(config);
+        const db = firebase.firestore();
+        db.settings({ timestampsInSnapshots: true})
+    </script>
+    <script src="app.js"></script>
+</body>
+</html>
